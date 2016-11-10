@@ -1,0 +1,25 @@
+﻿1、hostInfo.py
+获取主机基本信息和集群主机使用分析，以便和客户端对比测试。
+使用方法：拷贝到测试主机任意目录，使用命令python hostInfo.py或者./hostInfo.py即可在屏幕中输出相关信息。
+
+2、mastersAddDel.py
+用来在集群列表中添加假的集群，进行相关测试。
+使用方法：拷贝到集群列表服务器任意目录，使用命令./mastersAddDel.py -o add or del -n nums -h for help。
+例如获取帮助，
+./mastersAddDel.py -h
+添加50台集群，
+./mastersAddDel.py -o add -n 50
+删除50台集群，
+./mastersAddDel.py -o del -n 50
+执行命令后会自动重启列表服务，重新登录列表服务器就会有结果。
+
+2、hostsAddDel.py
+用来在集群中添加假的主机，进行相关测试。
+使用方法：拷贝到测试集群管理节点任意目录，使用命令./hostsAddDel.py -o add or del -n nums -h for help。
+例如获取帮助，
+./hostsAddDel.py -h
+添加50台主机，
+./hostsAddDel.py -o add -n 50
+删除50台主机，
+./hostsAddDel.py -o del -n 50
+执行脚本后需要手动执行命令 /etc/init.d/smbmaster restart重启smbmaster服务，才可以生效。
