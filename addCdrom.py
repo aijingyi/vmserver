@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+#coding:utf-8
 
 ########################
 #Powered by kai.liang@i-soft.com.cn
@@ -14,19 +14,21 @@ import sys
 import os
 
 
+#下载光盘iso通用函数
 def downCdrom(iso, url, local):
     print '光盘镜像 %s 正在下载，请稍后…' %(iso)
     urllib.urlretrieve(url,local)
     print '光盘镜像 %s 已下载完毕。' %(iso)
 
 
-
 def connSql(name):
     try:
+	#创建数据库对象
         conn = MySQLdb.connect(host = 'localhost', \
 				user = 'isoft', \
 				passwd = 'smbee60f9',\
 				db = 'smb')
+	#创建游标对象
 	cur = conn.cursor()
 
         sql1 = "insert into install_media(name, file, os_id, time, description, type) values( '%s','%s','%s','%s','%s','%s')"

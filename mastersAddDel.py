@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+#coding:utf-8
 
 ########################
 #Powered by kai.liang@i-soft.com.cn
